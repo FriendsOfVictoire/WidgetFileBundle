@@ -1,5 +1,5 @@
 {
-    "name": "victoire/file-bundle",
+    "name": "victoire/file-widget",
     "type": "symfony-bundle",
     "description": "Victoire Cms File component",
     "keywords": ["cms", "victoire", "file"],
