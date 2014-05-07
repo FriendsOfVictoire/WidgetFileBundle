@@ -28,7 +28,7 @@ class WidgetFileType extends WidgetType
             $builder
                 ->add('title')
                 ->add('file', 'media', array(
-                    'label' => 'widget_file.form.file.label'
+                    'label' => 'widget.file.form.file.label'
                 ))
                 //
                 ;
