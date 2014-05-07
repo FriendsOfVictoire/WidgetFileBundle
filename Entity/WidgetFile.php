@@ -24,7 +24,7 @@ class WidgetFile extends Widget
     /**
      * @var string
      *
-     * @ORM\ManyToOne(targetEntity="\Kunstmaan\MediaBundle\Entity\Media")
+     * @ORM\ManyToOne(targetEntity="\Victoire\Bundle\MediaBundle\Entity\Media")
      * @ORM\JoinColumn(name="file_id", referencedColumnName="id", onDelete="CASCADE")
      *
      */
