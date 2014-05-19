@@ -61,6 +61,6 @@ class WidgetFileType extends WidgetType
      */
     public function getName()
     {
-        return 'appventus_victoireCoreBundle_widgetfiletype';
+        return 'appventus_victoirecorebundle_widgetfiletype';
     }
 }
