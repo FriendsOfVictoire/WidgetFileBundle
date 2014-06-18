@@ -1,5 +1,5 @@
 <?php
-namespace Victoire\FileBundle\Entity;
+namespace Victoire\Widget\FileBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Victoire\Bundle\CoreBundle\Entity\Widget;
@@ -32,6 +32,8 @@ class WidgetFile extends Widget
      * Set title
      *
      * @param string $title
+     *
+     * @return WidgetFile
      */
     public function setTitle($title)
     {
@@ -54,6 +56,8 @@ class WidgetFile extends Widget
      * Set file
      *
      * @param string $file
+     *
+     * @return WidgetFile
      */
     public function setFile($file)
     {

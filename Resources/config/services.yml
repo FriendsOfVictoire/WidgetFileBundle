@@ -1,7 +1,17 @@
 services:
     victoire_core.twig.widget_file_manager:
-        class: Victoire\FileBundle\Widget\Manager\WidgetFileManager
-        arguments: [@service_container]
+        class: Victoire\Widget\FileBundle\Widget\Manager\WidgetFileManager
+        arguments: 
+            - "@service_container"
 
     widget_file_manager:
         alias: victoire_core.twig.widget_file_manager
+        
+    #alias to the entity
+    victoire.widget.file:
+        class: Victoire\Widget\FileBundle\Entity\WidgetFile
+    #alias to the form
+    victoire.widget.form.file:
+        class: Victoire\Widget\FileBundle\Form\WidgetFileType
+        tags:
+            - { name: form.type , alias: victoire_widget_form_file}
