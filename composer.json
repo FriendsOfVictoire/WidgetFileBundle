@@ -17,10 +17,10 @@
         "victoire/victoire"                   : ">=0.1.4"
     },   
     "autoload": {
-        "psr-0": { "Victoire\\FileBundle": "" }
+        "psr-0": { "Victoire\\Widget\\FileBundle": "" }
     },
     "minimum-stability": "dev",
 
 
-    "target-dir": "Victoire/FileBundle"
+    "target-dir": "Victoire/Widget/FileBundle"
 }
