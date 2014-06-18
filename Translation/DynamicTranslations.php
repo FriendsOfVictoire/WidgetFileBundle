@@ -20,6 +20,7 @@ class DynamicTranslations implements TranslationContainerInterface
     public static function getTranslationMessages()
     {
         return array(
+            new Message('modal.form.widget.type.file.label', 'victoire'),
             new Message('widget.file.new.action.label', 'victoire')
         );
     }

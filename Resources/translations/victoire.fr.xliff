@@ -6,13 +6,9 @@
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
     </header>
     <body>
-      <trans-unit id="4fd0653c4f2aef3b19a3c145bbdc5f4740715a09" resname="cancel">
-        <source>Annuler</source>
-        <target>Annuler</target>
-      </trans-unit>
-      <trans-unit id="7a85f4764bbd6daf1c3545efbbf0f279a6dc0beb" resname="ok">
-        <source>Ok</source>
-        <target>Ok</target>
+      <trans-unit id="09db03161e5e9a4c14829391fdaa31a38d5f5112" resname="modal.form.widget.type.file.label">
+        <source>modal.form.widget.type.file.label</source>
+        <target>Widget Fichier</target>
       </trans-unit>
       <trans-unit id="bb9276c332f198131ed90d922becf34e83e6bf45" resname="widget.file.form.file.label">
         <source>widget.file.form.file.label</source>
