@@ -1,5 +1,5 @@
 victoire_core:
     widgets:
         file:
-            class: "Victoire\\FileBundle\\Entity\\WidgetFile"
+            class: "Victoire\\Widget\\FileBundle\\Entity\\WidgetFile"
             name: file

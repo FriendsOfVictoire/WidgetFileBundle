@@ -1,6 +1,6 @@
 <?php
 
-namespace Victoire\FileBundle\Form;
+namespace Victoire\Widget\FileBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -14,33 +14,36 @@ use Victoire\Bundle\CoreBundle\Form\WidgetType;
  */
 class WidgetFileType extends WidgetType
 {
-
     /**
      * define form fields
      * @param FormBuilderInterface $builder
      * @param array $options
+     *
+     * @throws \Exception
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $namespace = $options['namespace'];
+        $entityName = $options['entityName'];
+
+        if ($entityName !== null) {
+            if ($namespace === null) {
+                throw new \Exception('The namespace is mandatory if the entity_name is given.');
+            }
+        }
+
         //choose form mode
-        if ($this->entity_name === null) {
+        if ($entityName === null) {
             //if no entity is given, we generate the static form
             $builder
                 ->add('title')
                 ->add('file', 'media', array(
                     'label' => 'widget.file.form.file.label'
-                ))
-                //
-                ;
-
-        } else {
-            //else, WidgetType class will embed a EntityProxyType for given entity
-            parent::buildForm($builder, $options);
+                ));
         }
 
-
+        parent::buildForm($builder, $options);
     }
-
 
     /**
      * bind form to WidgetFile entity
@@ -48,19 +51,22 @@ class WidgetFileType extends WidgetType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
+        parent::setDefaultOptions($resolver);
+
         $resolver->setDefaults(array(
-            'data_class'         => 'Victoire\FileBundle\Entity\WidgetFile',
+            'data_class'         => 'Victoire\Widget\FileBundle\Entity\WidgetFile',
             'widget'             => 'file',
             'translation_domain' => 'victoire'
         ));
     }
 
-
     /**
      * get form name
+     *
+     * @return string The name of the form
      */
     public function getName()
     {
-        return 'appventus_victoirecorebundle_widgetfiletype';
+        return 'victoire_widget_form_file';
     }
 }
