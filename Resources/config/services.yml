@@ -3,6 +3,7 @@ services:
         class: Victoire\Widget\FileBundle\Widget\Manager\WidgetFileManager
         arguments: 
             - "@service_container"
+            - "File"
 
     widget_file_manager:
         alias: victoire_core.twig.widget_file_manager
