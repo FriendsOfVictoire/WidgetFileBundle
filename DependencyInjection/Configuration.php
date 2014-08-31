@@ -13,14 +13,16 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 class Configuration implements ConfigurationInterface
 {
     /**
-     * Get the configuration tree builder
-     *
-     * @return \Symfony\Component\Config\Definition\Builder\TreeBuilder
+     * {@inheritDoc}
      */
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $treeBuilder->root('victoire_file');
+        $rootNode = $treeBuilder->root('victoire_widget_file');
+
+        // Here you should define the parameters that are allowed to
+        // configure your bundle. See the documentation linked above for
+        // more information on that topic.
 
         return $treeBuilder;
     }

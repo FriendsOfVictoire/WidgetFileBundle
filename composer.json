@@ -1,26 +1,23 @@
 {
     "name": "victoire/file-widget",
     "type": "symfony-bundle",
-    "description": "Victoire Cms File component",
-    "keywords": ["cms", "victoire", "file"],
+    "description": "Victoire Cms File widget",
+    "keywords": ["cms", "victoire", "File", "widget"],
     "homepage": "http://appventus.com",
     "license": "MIT",
     "authors": [
         {
-            "name": "Paul Andrieux",
-            "email": "paul@appventus.com"
+            "name": "Leny BERNARD",
+            "email": "leny@appventus.com"
         }
     ],
     "require": {
-        "php"                                 : ">=5.3.3",
-        "symfony/framework-bundle"            : "~2.3",
-        "victoire/victoire"                   : ">=0.1.4"
-    },   
+        "php"                      : ">=5.3.3",
+        "symfony/framework-bundle" : "~2.3",
+        "victoire/victoire"        : "dev-master"    },
     "autoload": {
         "psr-0": { "Victoire\\Widget\\FileBundle": "" }
     },
     "minimum-stability": "dev",
-
-
     "target-dir": "Victoire/Widget/FileBundle"
 }

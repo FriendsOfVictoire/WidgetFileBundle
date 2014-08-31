@@ -13,38 +13,34 @@ class WidgetFileType extends WidgetType
 {
     /**
      * define form fields
-     * @param FormBuilderInterface $builder
-     * @param array                $options
-     *
-     * @throws \Exception
+     * @param FormBuilderInterface $builder
+     * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $namespace = $options['namespace'];
-        $entityName = $options['entityName'];
-
-        if ($entityName !== null) {
-            if ($namespace === null) {
-                throw new \Exception('The namespace is mandatory if the entity_name is given.');
-            }
-        }
-
-        //choose form mode
-        if ($entityName === null) {
-            //if no entity is given, we generate the static form
-            $builder
-                ->add('title')
-                ->add('file', 'media', array(
-                    'label' => 'widget.file.form.file.label'
-                ));
-        }
+        $builder
+            ->add(
+                'file',
+                'media',
+                array(
+                    'label' => 'widget_file.form.file.label'
+                )
+            )
+            ->add(
+                'linkLabel',
+                null,
+                array(
+                    'label' => 'widget_file.form.linkLabel.label'
+                )
+            );
 
         parent::buildForm($builder, $options);
+
     }
 
     /**
      * bind form to WidgetFile entity
-     * @param OptionsResolverInterface $resolver
+     * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
@@ -52,7 +48,7 @@ class WidgetFileType extends WidgetType
 
         $resolver->setDefaults(array(
             'data_class'         => 'Victoire\Widget\FileBundle\Entity\WidgetFile',
-            'widget'             => 'file',
+            'widget'             => 'File',
             'translation_domain' => 'victoire'
         ));
     }
@@ -60,7 +56,7 @@ class WidgetFileType extends WidgetType
     /**
      * get form name
      *
-     * @return string The name of the form
+     * @return string The form name
      */
     public function getName()
     {

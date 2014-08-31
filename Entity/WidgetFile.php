@@ -12,52 +12,37 @@ use Victoire\Bundle\WidgetBundle\Entity\Widget;
  */
 class WidgetFile extends Widget
 {
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="title", type="string", length=255)
-     */
-    private $title;
 
     /**
-     * @var string
+     * @var text
      *
      * @ORM\ManyToOne(targetEntity="\Victoire\Bundle\MediaBundle\Entity\Media")
      * @ORM\JoinColumn(name="file_id", referencedColumnName="id", onDelete="CASCADE")
-     *
      */
-    private $file;
+    protected $file;
 
     /**
-     * Set title
+     * @var string
      *
-     * @param string $title
-     *
-     * @return WidgetFile
+     * @ORM\Column(name="linkLabel", type="string", length=255)
      */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-
-        return $this;
-    }
+    protected $linkLabel;
 
     /**
-     * Get title
+     * To String function
+     * Used in render choices type (Especially in VictoireWidgetRenderBundle)
      *
-     * @return string
+     * @return String
      */
-    public function getTitle()
+    public function __toString()
     {
-        return $this->title;
+        return 'File #'.$this->id;
     }
 
     /**
      * Set file
      *
      * @param string $file
-     *
-     * @return WidgetFile
      */
     public function setFile($file)
     {
@@ -74,6 +59,28 @@ class WidgetFile extends Widget
     public function getFile()
     {
         return $this->file;
+    }
+
+    /**
+     * Set linkLabel
+     *
+     * @param string $linkLabel
+     */
+    public function setLinklabel($linkLabel)
+    {
+        $this->linkLabel = $linkLabel;
+
+        return $this;
+    }
+
+    /**
+     * Get linkLabel
+     *
+     * @return string
+     */
+    public function getLinklabel()
+    {
+        return $this->linkLabel;
     }
 
 }

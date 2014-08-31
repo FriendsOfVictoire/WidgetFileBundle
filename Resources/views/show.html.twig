@@ -1,7 +1,8 @@
 {% extends 'VictoireCoreBundle:Widget:show.html.twig' %}
+{% trans_default_domain "victoire" %}
 
 {% block content %}
-    <a href="{{widget.file.url}}" target="_blank">{{widget.title}}</a>
+<a href="{{ file }}" title="{{ 'widget_file.show.link.hoverLabel'|trans({'%linkLabel%': linkLabel }) }}">
+    {{ linkLabel }}
+</a>
 {% endblock content %}
-
-

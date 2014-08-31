@@ -1,12 +1,4 @@
-{% trans_default_domain "victoire" %}
-{% block body %}
-
-<div id="widget-{{slot}}" class="add-widget">
+{% extends 'VictoireCoreBundle:Widget:new.html.twig' %}
 {% block form %}
-    <form method="POST" action="{{path('victoire_core_widget_create', {'page': page.id,'slot':slot, 'type':'file', 'entity': entity} )}}">
-        {{form_row(form)}}
-        {{form_rest(form)}}
-    </form>
+    {{ parent() }}
 {% endblock form %}
-</div>
-{% endblock body %}

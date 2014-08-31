@@ -1,13 +1,5 @@
-{% trans_default_domain "victoire" %}
-{% block body %}
+{% extends 'VictoireCoreBundle:Widget:edit.html.twig' %}
 
-<div class="edit-widget">
 {% block form %}
-    <form class="ajax" update="widget-{{widget.id}}" method="POST" action="{{path('victoire_core_widget_edit', {'id':widget.id, 'type':entity} )}}">
-        {{form_row(form)}}
-        {{form_rest(form)}}
-    </form>
+    {{ parent() }}
 {% endblock form %}
-
-</div>
-{% endblock body %}

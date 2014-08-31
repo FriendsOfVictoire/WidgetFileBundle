@@ -8,19 +8,19 @@
     <body>
       <trans-unit resname="widget.file.new.action.label">
         <source>widget.file.new.action.label</source>
-        <target>Fichier</target>
+        <target>File</target>
       </trans-unit>
       <trans-unit resname="modal.form.widget.type.file.label">
         <source>modal.form.widget.type.file.label</source>
-        <target>Fichier</target>
+        <target>File</target>
       </trans-unit>
       <trans-unit resname="widget_file.form.file.label">
         <source>widget_file.form.file.label</source>
-        <target>Fichier</target>
+        <target>File</target>
       </trans-unit>
       <trans-unit resname="widget_file.form.linkLabel.label">
         <source>widget_file.form.linkLabel.label</source>
-        <target>Libellé</target>
+        <target>Label</target>
       </trans-unit>
     </body>
   </file>

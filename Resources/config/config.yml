@@ -1,5 +1,11 @@
 victoire_core:
     widgets:
-        file:
+        File:
             class: "Victoire\\Widget\\FileBundle\\Entity\\WidgetFile"
-            name: file
+            name: File
+            
+jms_translation:
+    configs:
+        victoire_file_bundle:
+            dirs: ["@VictoireFileBundle"]
+            output_dir: "@VictoireFileBundle/Resources/translations"
