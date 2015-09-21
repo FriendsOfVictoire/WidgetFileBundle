@@ -2,7 +2,7 @@
 {% trans_default_domain "victoire" %}
 
 {% block content %}
-<a href="{{ file }}" title="{{ 'widget_file.show.link.hoverLabel'|trans({'%linkLabel%': linkLabel }) }}">
+<a href="{{ file }}" target="_blank" title="{{ 'widget_file.show.link.hoverLabel'|trans({'%linkLabel%': linkLabel }) }}">
     {{ linkLabel }}
 </a>
 {% endblock content %}
