@@ -7,13 +7,15 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
 
 /**
- * WidgetFile form type
+ * WidgetFile form type.
  */
 class WidgetFileType extends WidgetType
 {
     /**
-     * define form fields
+     * define form fields.
+     *
      * @param FormBuilderInterface $builder
+     *
      * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -22,39 +24,39 @@ class WidgetFileType extends WidgetType
             ->add(
                 'file',
                 'media',
-                array(
-                    'label' => 'widget_file.form.file.label'
-                )
+                [
+                    'label' => 'widget_file.form.file.label',
+                ]
             )
             ->add(
                 'linkLabel',
                 null,
-                array(
-                    'label' => 'widget_file.form.linkLabel.label'
-                )
+                [
+                    'label' => 'widget_file.form.linkLabel.label',
+                ]
             );
 
         parent::buildForm($builder, $options);
-
     }
 
     /**
-     * bind form to WidgetFile entity
+     * bind form to WidgetFile entity.
+     *
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         parent::setDefaultOptions($resolver);
 
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'data_class'         => 'Victoire\Widget\FileBundle\Entity\WidgetFile',
             'widget'             => 'File',
-            'translation_domain' => 'victoire'
-        ));
+            'translation_domain' => 'victoire',
+        ]);
     }
 
     /**
-     * get form name
+     * get form name.
      *
      * @return string The form name
      */

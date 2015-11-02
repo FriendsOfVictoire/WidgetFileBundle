@@ -1,18 +1,18 @@
 <?php
+
 namespace Victoire\Widget\FileBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Victoire\Bundle\WidgetBundle\Entity\Widget;
 
 /**
- * WidgetFile
+ * WidgetFile.
  *
  * @ORM\Table("vic_widget_file")
  * @ORM\Entity
  */
 class WidgetFile extends Widget
 {
-
     /**
      * @var text
      *
@@ -30,9 +30,9 @@ class WidgetFile extends Widget
 
     /**
      * To String function
-     * Used in render choices type (Especially in VictoireWidgetRenderBundle)
+     * Used in render choices type (Especially in VictoireWidgetRenderBundle).
      *
-     * @return String
+     * @return string
      */
     public function __toString()
     {
@@ -40,7 +40,7 @@ class WidgetFile extends Widget
     }
 
     /**
-     * Set file
+     * Set file.
      *
      * @param string $file
      */
@@ -52,7 +52,7 @@ class WidgetFile extends Widget
     }
 
     /**
-     * Get file
+     * Get file.
      *
      * @return string
      */
@@ -62,7 +62,7 @@ class WidgetFile extends Widget
     }
 
     /**
-     * Set linkLabel
+     * Set linkLabel.
      *
      * @param string $linkLabel
      */
@@ -74,7 +74,7 @@ class WidgetFile extends Widget
     }
 
     /**
-     * Get linkLabel
+     * Get linkLabel.
      *
      * @return string
      */
@@ -82,5 +82,4 @@ class WidgetFile extends Widget
     {
         return $this->linkLabel;
     }
-
 }
