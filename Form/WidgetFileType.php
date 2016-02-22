@@ -3,12 +3,10 @@
 namespace Victoire\Widget\FileBundle\Form;
 
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
+use Victoire\Bundle\MediaBundle\Form\Type\MediaType;
 
-/**
- * WidgetFile form type.
- */
 class WidgetFileType extends WidgetType
 {
     /**
@@ -21,17 +19,10 @@ class WidgetFileType extends WidgetType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add(
-                'file',
-                'media',
-                [
-                    'label' => 'widget_file.form.file.label',
-                ]
-            )
-            ->add(
-                'linkLabel',
-                null,
-                [
+            ->add('file', MediaType::class, [
+                'label' => 'widget_file.form.file.label',
+            ])
+            ->add('linkLabel', null, [
                     'label' => 'widget_file.form.linkLabel.label',
                 ]
             );
@@ -40,28 +31,16 @@ class WidgetFileType extends WidgetType
     }
 
     /**
-     * bind form to WidgetFile entity.
-     *
-     * @param OptionsResolverInterface $resolver
+     * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
-        parent::setDefaultOptions($resolver);
+        parent::configureOptions($resolver);
 
         $resolver->setDefaults([
             'data_class'         => 'Victoire\Widget\FileBundle\Entity\WidgetFile',
             'widget'             => 'File',
             'translation_domain' => 'victoire',
         ]);
-    }
-
-    /**
-     * get form name.
-     *
-     * @return string The form name
-     */
-    public function getName()
-    {
-        return 'victoire_widget_form_file';
     }
 }
